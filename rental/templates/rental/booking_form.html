@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="/static/rental.css">
+</head>
+<body>
+    <h1>Booking Form</h1>
+    <p>Car: {{ car.name }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="duration" placeholder="Booking Duration (days)" required>
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+</html>

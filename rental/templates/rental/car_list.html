@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Car Rental System</title>
+    <link rel="stylesheet" href="/static/rental.css">
+</head>
+<body>
+    <marquee behavior="scroll" direction="left" bgcolor="#cc68f7" height="60" style="font-size:45px">*****Welcome to Online Car Rental System*****</marquee>
+    {% include 'rental/header.html' %}
+    <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Available Cars</h1>
+    </div>
+    <table>
+        <tr>
+            <th>Car Type</th>
+            <th>Car Name</th>
+            <th>Rent Per Day</th>
+            <th>Action</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.type }}</td>
+            <td>{{ car.name }}</td>
+            <td>{{ car.price }} Taka</td>
+            <td><a href="/book/{{ car.id }}/">Book Now</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include 'rental/footer.html' %}
+
+</body>
+</html>

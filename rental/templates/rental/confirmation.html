@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="/static/rental.css">
+</head>
+<body>
+    <h1>Booking Confirmed</h1>
+    <p>Thank you, {{ booking.name }}!</p>
+    <p>Your booking for {{ booking.car.name }} is confirmed.</p>
+    <p>Booking Duration: {{ booking.duration }} days</p>
+    <p>Total Amount: {{ booking.total_amount }} Taka</p>
+    <p style="color:rgb(255, 0, 8);">Your Token: <strong>{{ booking.token }}</strong></p>
+    <p style="color:rgb(255, 0, 8);"><strong>Please preserve this Token number. It will need for payment purpose also for returning car.</strong></p>
+    <br>
+    <p>Please complete payment within 15 minutes otherwise booking will be cancel. Use token number as reference in payment gateway</p>
+    <br>
+    <a href="https://shop.bkash.com/badhon-store01843479011/paymentlink">
+        <button>Pay Now</button>
+    </a>
+    <a href="/home">Rent Another Car?</a>
+</body>
+</html>
